@@ -208,87 +208,57 @@ const artists = [
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
-
+console.log(artists[0].name)
+console.log(artists[2].bio)
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
+artists[8].name = "Vincent Van Gogh";
+console.log(artists[8].name);
 
 
-/* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
- *     (1) artists array
- *     (2) a number which is the desired index in the array.
- * getArtistByIndex returns a string in the format `The artist at index {id} is {name}.`
- * 
- * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
- * it will return `The artist at index 0 is Amedeo Modigliani`.
-*/
+/* Task 3: Create a function called `getArtistByIndex` that takes two arguments:*/
+
 function getArtistByIndex(array, index) {
-    /* code here */
+    return `The artist at index ${index} is ${array[index].name}.`
   }
-  
-  /**
-
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
-
-  /* Code here */
-
+function get20s(array){
+  let alive = [];
+  for(i=0; i<array.length; i++){
+    if (array[i].years.includes(" 19")){
+      alive.push(array[i])
+    }
+  }
+  return alive
 }
 
+/* Task 5: Create a function called `removeArtist` that takes two arguments:*/
 
-/* Task 5: Create a function called `removeArtist` that takes two arguments:
- *     (1) artists array
- *     (2) a number which is the desired index in the array.
- * removeArtist removes an artist from the array at the index and console.logs the length of the remaining dataset.
- * 
- * For example, if removeArtist is invoked with the data and the number 0,
- * it will remove Amedeo Modigliani from our dataset and log the number 19. 
- * 
- * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
-*/
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
-  
-  /**
-
-
-
-
-/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
-
-For example, you could add the following information: 
-id: 21
-name: Your Name Here, 
-years: Your Birth Year - current day,
-genre: Web Design, 
-nationality: Your Nationality Here
-bio: Add 1-2 sentences (or use lorem ipsum) 
-
-At the end, this function should console.log() the new array with information added"*/
-
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function removeArtist(array, index) {
+    array.splice(index, 1);
+    return array
   }
 
-/* Task 7: Create a function called lotsOfArt() that takes one argument: 
+/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨*/
 
-    (1) artists array 
+function addArtist(array, id, name, years, genre, nationality, bio){
 
-and returns an array with names of artists who painted more than 100 paintings.
+array.push({id: id, name: name, years: years, genre: genre, nationality: nationality, bio: bio})
+return array
+  }
 
-For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
+console.log(addArtist(artists, 20, "Alexander Goncalves", "1994 - 2020", "Postmodernism", "American, Portuguese, German", "A powerhouse of aesthetic virtuosity"))
 
-function lotsOfArt(/* Code here */){
+/* Task 7: Create a function called lotsOfArt() that takes one argument: */
 
-  /* Code here */
-
+function lotsOfArt(array){
+  return array.filter(artist => artist.paintings > 100)
 }
 
+console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
@@ -314,20 +284,27 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+function getHTML(data){
 
-    /* Code here */
-
+  //haha wut
+  
   }
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
+function randomize(array){
+  for (i=array.length-1; i>0; i--){
+    let j = Math.floor(Math.random() * (i-1));
+    [array[j], array[i]] = [array[i], array[j]];
   }
+  return array
+}
 
+console.log(randomize([1,2,3,4,5,6,7,8,9,0]))
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+
+ function get20sRedux(array){
+  return array.filter(artist => artist.years.includes(" 19"))
+}

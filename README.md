@@ -22,11 +22,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. How would you describe preprocessing to someone new to CSS?
-2. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
+1. How would you describe acessibility on the web to someone new to programming?
+Web accesssibility is the process of making internet content available and comprehensible for differently-abled net-users. That is to say, a website is accessible if individuals with sight and hearing impairments are able to navigate your site with ease.
+
+2. Talk about 3 different things you can do to ensure your website is accessible. 
+The first thing you can do is ensure you've properly marked up your html with appropriate semantic elements (only one h1 tag, relevant meta information, appropriate usage of ids for headers).
+
+The second thing you can do is give thorough descriptions of images in their alt attribute, and apply the appropriate lang attribute to your text so that screen readers employ the right pronunciations.
+
+Lastly, you can give aria roles to tags to help screen readers navigate the page smoothly.
+
+
 3. How would you explain the concept of a variable to someone new to programming?
+A variable is essentially a container for data. Just like X and Y in algebra, programming variables are used to hold and represent different kinds of data. The variable provides a descriptive name that represents text, or numbers, or a value like true or false. 
+
 4. What is the purpose of using functions in code?
-5. What is JSON data?
+Functions are chunks of rules or instructions for your program that are separated out from the rest of your code. They have two primary uses: the first is to protect that batch of code from being executed in the normal line-by-line when the program is run. The second is that, by grouping a set of related rules together, it gives you the ability to execute those commands as many times as you want and simplify your code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -36,17 +47,17 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Follow these steps to set up your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your Team Lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Create a forked copy of this project.
+- [X] Add your Team Lead as collaborator on Github.
+- [X] Clone your OWN version of the repository (Not Lambda's by mistake!).
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 ### Task 2a:  Minimum Viable Product - Responsive Design
 
 *Before you jump in, take 10 minutes to review the code that has already been provided for you. Take time to see how the home page was built. During this time, [Review the provided design files](design/). You have been provided all content necessary in the [index.html file](index.html) and basic styling in the [index.css file](css/index.css).*
 
-* [ ] Add a viewport meta tag to the head of your index.html page.
-* [ ] Add responsive breakpoints to your code for 500px such that your styles match the [mobile design file](design/Mobile.png).
+* [X] Add a viewport meta tag to the head of your index.html page.
+* [X] Add responsive breakpoints to your code for 500px such that your styles match the [mobile design file](design/Mobile.png).
 
 ### Task 2b: Minimum Viable Product - JavaScript
 
